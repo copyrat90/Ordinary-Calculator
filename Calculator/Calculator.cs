@@ -142,12 +142,14 @@ namespace Calculator
 
         private void DotButton_Click(object sender, EventArgs e)
         {
-            if (!ResultLabel.Text.Contains("."))
+            if (isNewNum)
             {
-                if (isNewNum)
-                    ResultLabel.Text = "0";
-                ResultLabel.Text += ".";
+                ResultLabel.Text = "0.";
                 isNewNum = false;
+            }
+            else if (!ResultLabel.Text.Contains("."))
+            {
+                ResultLabel.Text += ".";
             }
         }
 
